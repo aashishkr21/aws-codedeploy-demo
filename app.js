@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello from AWS CodeDeploy!');
+  res.send('Hello from AWS CodeDeploy. Hope the pipeline is working too!');
 });
 
 app.listen(port, () => {
