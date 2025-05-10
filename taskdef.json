@@ -1,0 +1,83 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:latest",
+    "containerDefinitions": [
+        {
+            "name": "app-container",
+            "image": "nginx:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/aws/ecs//ecs/app-service",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "app-container"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "app-container-app-task",
+    "taskRoleArn": "arn:aws:iam::127214169103:role/app-task-role",
+    "executionRoleArn": "arn:aws:iam::127214169103:role/app-task-execution-role",
+    "networkMode": "awsvpc",
+    "revision": 3,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2025-05-10T10:20:35.959Z",
+    "registeredBy": "arn:aws:iam::127214169103:user/test",
+    "tags": [
+        {
+            "key": "Terraform",
+            "value": "true"
+        },
+        {
+            "key": "Project",
+            "value": "codebuild-pipeline"
+        },
+        {
+            "key": "Environment",
+            "value": "dev"
+        }
+    ]
+}
