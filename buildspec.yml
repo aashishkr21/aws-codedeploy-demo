@@ -12,9 +12,9 @@ phases:
     commands:
       - echo "Build started on `date`"
       - mkdir -p build_output
-      - cp appspec.yml build_output/
-      - cp taskdef.json build_output/
-      - cp -r scripts build_output/
+      - cp appspec.yml build_outp/
+      - cp taskdef.json build_outp/
+      - cp -r scripts build_outp/
 
   post_build:
     commands:
@@ -23,5 +23,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: build_output
+  base-directory: build_outp
   discard-paths: no
