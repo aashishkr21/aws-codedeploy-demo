@@ -3,9 +3,9 @@ Resources:
   TargetService:
     Type: AWS::ECS::Service
     Properties:
-      TaskDefinition: "taskdef.json"
+      TaskDefinition: taskdef.json
       LoadBalancerInfo:
-        ContainerName: "app-container"
+        ContainerName: app-container
         ContainerPort: 80
 
 hooks:
