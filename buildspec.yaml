@@ -12,7 +12,7 @@ phases:
     commands:
       - echo "Build started on `date`"
       - mkdir -p build_output
-      - cp appspec.yml build_output/
+      - cp appspec.yaml build_output/
       - cp taskdef.json build_output/
       - cp -r scripts build_output/
 
