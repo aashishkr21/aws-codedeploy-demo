@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:latest",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:45",
     "containerDefinitions": [
         {
             "name": "app-container",
-            "image": "nginx:latest",
+            "image": "127214169103.dkr.ecr.ap-south-1.amazonaws.com/codedeploy-ecr:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -31,7 +31,7 @@
     "taskRoleArn": "arn:aws:iam::127214169103:role/app-task-role",
     "executionRoleArn": "arn:aws:iam::127214169103:role/app-task-execution-role",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 45,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -64,8 +64,8 @@
     ],
     "cpu": "1024",
     "memory": "3072",
-    "registeredAt": "2025-05-10T10:20:35.959Z",
-    "registeredBy": "arn:aws:iam::127214169103:user/test",
+    "registeredAt": "2025-05-12T19:42:43.284Z",
+    "registeredBy": "arn:aws:sts::127214169103:assumed-role/dev-codepipeline-service-role/1747078962852",
     "tags": [
         {
             "key": "Terraform",
