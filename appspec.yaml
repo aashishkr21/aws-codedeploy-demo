@@ -6,4 +6,4 @@ Resources:
         TaskDefinition: "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:37"
         LoadBalancerInfo:
           ContainerName: "app-container"
-          ContainerPort: 8000
+          ContainerPort: 3000
