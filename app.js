@@ -6,6 +6,6 @@ app.get('/', (req, res) => {
   res.send('Hello from AWS CodeDeploy. If you have reached this far it means pipeline is working fine 100 testing222');
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`App running on port ${port}`);
 });
