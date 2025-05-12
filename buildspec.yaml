@@ -9,12 +9,12 @@ phases:
       - npm install
       - echo "Logging in to Amazon ECR..."
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 127214169103.dkr.ecr.ap-south-1.amazonaws.com
-      
+
   build:
     commands:
       - echo "Build started on `date`"
       - echo "Building the Docker image..."
-      - docker build -t node-app .
+      - docker build -t codedeploy-ecr .
       - docker tag codedeploy-ecr:latest 127214169103.dkr.ecr.ap-south-1.amazonaws.com/codedeploy-ecr:latest
       - mkdir -p build_output
       - cp appspec.yaml build_output/
