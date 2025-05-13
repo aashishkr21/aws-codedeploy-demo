@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:71",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:127214169103:task-definition/app-container-app-task:45",
     "containerDefinitions": [
         {
             "name": "app-container",
