@@ -13,7 +13,12 @@
                 }
             ],
             "essential": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "ENV",
+                    "value": "dev"
+                }
+            ],
             "mountPoints": [],
             "volumesFrom": [],
             "logConfiguration": {
@@ -30,8 +35,8 @@
     "family": "app-container-app-task",
     "taskRoleArn": "arn:aws:iam::127214169103:role/app-task-role",
     "executionRoleArn": "arn:aws:iam::127214169103:role/app-task-execution-role",
-    "networkMode": "awsvpc",
-    "revision": 45,
+    "networkMode": "bridge",
+    "revision": 92,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -42,30 +47,30 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
+            "name": "ecs.capability.execution-role-ecr-pull"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2",
-        "FARGATE"
+        "EXTERNAL",
+        "EC2"
     ],
     "requiresCompatibilities": [
-        "FARGATE"
+        "EC2"
     ],
-    "cpu": "1024",
-    "memory": "3072",
-    "registeredAt": "2025-05-12T19:42:43.284Z",
-    "registeredBy": "arn:aws:sts::127214169103:assumed-role/dev-codepipeline-service-role/1747078962852",
+    "cpu": "512",
+    "memory": "1024",
+    "registeredAt": "2025-05-14T11:32:50.923Z",
+    "registeredBy": "arn:aws:iam::127214169103:user/ashlex",
     "tags": [
         {
             "key": "Terraform",
