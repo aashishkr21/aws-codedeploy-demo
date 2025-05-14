@@ -19,7 +19,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/aws/ecs//ecs/app-service",
+                    "awslogs-group": "/aws/ecs/app-service",
                     "awslogs-region": "ap-south-1",
                     "awslogs-stream-prefix": "app-container"
                 }
