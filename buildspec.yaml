@@ -1,21 +1,13 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 16
+  pre_build:
     commands:
-      - echo "Installing dependencies..."
-      - npm install
-      - echo "Logging in to Amazon ECR..."
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 127214169103.dkr.ecr.ap-south-1.amazonaws.com
 
   build:
     commands:
-      - echo "Build started on `date`"
-      - echo "Building the Docker image..."
-      - docker build -t codedeploy-ecr .
-      - docker tag codedeploy-ecr:latest 127214169103.dkr.ecr.ap-south-1.amazonaws.com/codedeploy-ecr:latest
+      - docker build -t 127214169103.dkr.ecr.ap-south-1.amazonaws.com/codedeploy-ecr:latest .
       - mkdir -p build_output
       - cp appspec.yaml build_output/
       - cp taskdef.json build_output/
